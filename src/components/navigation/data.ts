@@ -1,92 +1,92 @@
-const menu = [
+export const menu = [
   {
     id: 0,
-    title: "Opening",
+    label: "Opening",
     icon: "👋",
   },
   {
     id: 1,
-    title: "Salam",
+    label: "Salam",
     icon: "👋",
   },
   {
     id: 2,
-    title: "Quote",
+    label: "Quote",
     icon: "👋",
   },
   {
     id: 3,
-    title: "Mempelai",
+    label: "Mempelai",
     icon: "👋",
   },
   {
     id: 4,
-    title: "Acara",
+    label: "Acara",
     icon: "👋",
   },
   {
     id: 5,
-    title: "Acara",
+    label: "Acara",
     icon: "👋",
   },
   {
     id: 6,
-    title: "Map",
+    label: "Map",
     icon: "👋",
   },
   {
     id: 7,
-    title: "Live Streaming",
+    label: "Live Streaming",
     icon: "👋",
   },
   {
     id: 8,
-    title: "Galeri",
+    label: "Galeri",
     icon: "👋",
   },
   {
     id: 9,
-    title: "Video",
+    label: "Video",
     icon: "👋",
   },
   {
     id: 10,
-    title: "Love Story",
+    label: "Love Story",
     icon: "👋",
   },
   {
     id: 11,
-    title: "Extra Link",
+    label: "Extra Link",
     icon: "👋",
   },
   {
     id: 12,
-    title: "Rundown Acara",
+    label: "Rundown Acara",
     icon: "👋",
   },
   {
     id: 13,
-    title: "Doa",
+    label: "Doa",
     icon: "👋",
   },
   {
     id: 14,
-    title: "RSVP",
+    label: "RSVP",
     icon: "👋",
   },
   {
     id: 15,
-    title: "Gift",
+    label: "Gift",
     icon: "👋",
   },
   {
     id: 16,
-    title: "Prokes",
+    label: "Prokes",
     icon: "👋",
   },
   {
     id: 17,
-    title: "Terima Kasih",
+    label: "Terima Kasih",
     icon: "👋",
   },
 ];

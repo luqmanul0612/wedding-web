@@ -4,6 +4,7 @@ import classNames from "./navigation.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { motion } from "framer-motion";
+import { menu } from "./data";
 
 interface Props {
   isOpened: boolean;
@@ -28,12 +29,11 @@ const Navigation: FC<Props> = (props) => {
           transition={{ duration: 1, bounce: 0 }}
         >
           <div ref={ref} className="keen-slider">
-            <div className="keen-slider__slide">1</div>
-            <div className="keen-slider__slide">2</div>
-            <div className="keen-slider__slide">3</div>
-            <div className="keen-slider__slide">4</div>
-            <div className="keen-slider__slide">5</div>
-            <div className="keen-slider__slide">6</div>
+            {menu.map((item) => (
+              <div key={item.id} className="keen-slider__slide">
+                {item.label}
+              </div>
+            ))}
           </div>
         </motion.div>
       )}
