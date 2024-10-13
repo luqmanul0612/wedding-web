@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import bgvideo from "../../assets/videos/bg-video-1.mp4";
 import classNames from "./slider1.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
@@ -9,8 +9,22 @@ interface Props {
   onClickOpen: () => void;
 }
 
+interface QueryParams {
+  [key: string]: string;
+}
+
 const Slider1: FC<Props> = (props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [queryParams, setQueryParams] = useState<QueryParams>({});
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const queryObj = {};
+    params.forEach((value, key) => {
+      (queryObj as Record<string, string>)[key] = value;
+    });
+    setQueryParams(queryObj);
+  }, []);
 
   useEffect(() => {
     if (props.inView && videoRef.current) {
@@ -49,7 +63,7 @@ const Slider1: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 1, ease: "easeInOut" }}
           >
             <p>KEPADA YTH</p>
-            <p>Tamu Undangan</p>
+            <p>{queryParams?.name ?? "Tamu Undangan"}</p>
             <AnimatePresence>
               {!props.isOpened && (
                 <motion.div
