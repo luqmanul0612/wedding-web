@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  .content {
+    background-color: #fff;
+    width: 451px;
+    height: 100px;
+    position: fixed;
+  }
+}

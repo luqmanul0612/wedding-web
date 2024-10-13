@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+:global(.keen-slider) {
+  height: 100vh;
+  max-width: 451px;
+}
