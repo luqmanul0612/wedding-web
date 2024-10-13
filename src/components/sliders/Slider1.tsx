@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef } from "react";
-import bgvideo from "../../assets/bg-video-1.mp4";
+import bgvideo from "../../assets/videos/bg-video-1.mp4";
 import classNames from "./slider1.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
 

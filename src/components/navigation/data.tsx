@@ -1,92 +1,95 @@
+import Opening from "../../assets/icons/opening.svg?react";
+import Salam from "../../assets/icons/salam.svg?react";
+
 export const menu = [
   {
     id: 0,
     label: "Opening",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 1,
     label: "Salam",
-    icon: "👋",
+    icon: <Salam />,
   },
   {
     id: 2,
     label: "Quote",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 3,
     label: "Mempelai",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 4,
     label: "Acara",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 5,
     label: "Acara",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 6,
     label: "Map",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 7,
     label: "Live Streaming",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 8,
     label: "Galeri",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 9,
     label: "Video",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 10,
     label: "Love Story",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 11,
     label: "Extra Link",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 12,
     label: "Rundown Acara",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 13,
     label: "Doa",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 14,
     label: "RSVP",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 15,
     label: "Gift",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 16,
     label: "Prokes",
-    icon: "👋",
+    icon: <Opening />,
   },
   {
     id: 17,
     label: "Terima Kasih",
-    icon: "👋",
+    icon: <Opening />,
   },
 ];

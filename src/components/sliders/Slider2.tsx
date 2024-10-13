@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { FC, useEffect, useRef } from "react";
-import bgvideo from "../../assets/bg-video-2.mp4";
+import bgvideo from "../../assets/videos/bg-video-2.mp4";
 import classNames from "./slider2.module.scss";
 import { motion } from "framer-motion";
 

@@ -6,6 +6,7 @@ import { Slider1, Slider2 } from "./components/sliders";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Navigation from "./components/navigation";
+import clsx from "clsx";
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
@@ -17,6 +18,7 @@ export default function App() {
       loop: false,
       vertical: true,
       drag: isOpened,
+      initial: 0,
       slideChanged(slider) {
         setCurrentSlide(slider.track.details.rel);
       },
@@ -44,7 +46,10 @@ export default function App() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <div ref={sliderRef} className="keen-slider">
+      <div
+        ref={sliderRef}
+        className={clsx("keen-slider", classNames["keen-slider-main"])}
+      >
         <div className="keen-slider__slide">
           <Slider1
             isOpened={isOpened}
