@@ -14,6 +14,8 @@ const Slider2: FC<Props> = (props) => {
     if (props.inView && videoRef.current) {
       videoRef.current.play();
       videoRef.current.currentTime = 0;
+    } else {
+      videoRef.current?.pause();
     }
   }, [props.inView]);
 
