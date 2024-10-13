@@ -4,6 +4,7 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { Slider1 } from "./components/sliders";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function App() {
   const [isOpened, setIsOpened] = useState(false);
@@ -32,7 +33,12 @@ export default function App() {
   }, [isOpened]);
 
   return (
-    <div className="main">
+    <motion.div
+      className="main"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <div ref={sliderRef} className="keen-slider">
         <div className="keen-slider__slide">
           <Slider1 isOpened={isOpened} onClickOpen={onClickOpen} />
@@ -43,6 +49,6 @@ export default function App() {
         <div className="keen-slider__slide number-slide5">5</div>
         <div className="keen-slider__slide number-slide6">6</div>
       </div>
-    </div>
+    </motion.div>
   );
 }

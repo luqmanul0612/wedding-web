@@ -15,9 +15,28 @@ const Slider1: FC<Props> = (props) => {
         <source src={bgvideo} type="video/mp4" />
       </video>
       <div className={classNames.content}>
-        <p className={classNames.title}>THE WEDDING OF</p>
-        <p className={classNames.names}>Seila Ridho</p>
-        <div className={classNames.invitation}>
+        <motion.p
+          initial={{ y: -150, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
+          className={classNames.title}
+        >
+          THE WEDDING OF
+        </motion.p>
+        <motion.p
+          initial={{ y: -250, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
+          className={classNames.names}
+        >
+          Seila Ridho
+        </motion.p>
+        <motion.div
+          className={classNames.invitation}
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ bounce: 0, duration: 1, ease: "easeInOut" }}
+        >
           <p>KEPADA YTH</p>
           <p>Tamu Undangan</p>
           <AnimatePresence>
@@ -36,7 +55,7 @@ const Slider1: FC<Props> = (props) => {
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
