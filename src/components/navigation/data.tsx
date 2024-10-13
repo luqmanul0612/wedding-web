@@ -1,5 +1,6 @@
 import Opening from "../../assets/icons/opening.svg?react";
 import Salam from "../../assets/icons/salam.svg?react";
+import Quote from "../../assets/icons/quote.svg?react";
 
 export const menu = [
   {
@@ -15,82 +16,81 @@ export const menu = [
   {
     id: 2,
     label: "Quote",
-    icon: <Opening />,
+    icon: <Quote />,
   },
-  {
-    id: 3,
-    label: "Mempelai",
-    icon: <Opening />,
-  },
-  {
-    id: 4,
-    label: "Acara",
-    icon: <Opening />,
-  },
-  {
-    id: 5,
-    label: "Acara",
-    icon: <Opening />,
-  },
-  {
-    id: 6,
-    label: "Map",
-    icon: <Opening />,
-  },
-  {
-    id: 7,
-    label: "Live Streaming",
-    icon: <Opening />,
-    minWidth: 150,
-  },
-  {
-    id: 8,
-    label: "Galeri",
-    icon: <Opening />,
-  },
-  {
-    id: 9,
-    label: "Video",
-    icon: <Opening />,
-  },
-  {
-    id: 10,
-    label: "Love Story",
-    icon: <Opening />,
-  },
-  {
-    id: 11,
-    label: "Extra Link",
-    icon: <Opening />,
-  },
-  {
-    id: 12,
-    label: "Rundown Acara",
-    icon: <Opening />,
-  },
-  {
-    id: 13,
-    label: "Doa",
-    icon: <Opening />,
-  },
-  {
-    id: 14,
-    label: "RSVP",
-    icon: <Opening />,
-  },
-  {
-    id: 15,
-    label: "Gift",
-    icon: <Opening />,
-  },
-  {
-    id: 16,
-    label: "Prokes",
-    icon: <Opening />,
-  },
-  {
-    id: 17,
-    label: "Terima Kasih",
-    icon: <Opening />,
-  },
+  // {
+  //   id: 3,
+  //   label: "Mempelai",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 4,
+  //   label: "Acara",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 5,
+  //   label: "Acara",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 6,
+  //   label: "Map",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 7,
+  //   label: "Live Streaming",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 8,
+  //   label: "Galeri",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 9,
+  //   label: "Video",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 10,
+  //   label: "Love Story",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 11,
+  //   label: "Extra Link",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 12,
+  //   label: "Rundown Acara",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 13,
+  //   label: "Doa",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 14,
+  //   label: "RSVP",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 15,
+  //   label: "Gift",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 16,
+  //   label: "Prokes",
+  //   icon: <Opening />,
+  // },
+  // {
+  //   id: 17,
+  //   label: "Terima Kasih",
+  //   icon: <Opening />,
+  // },
 ];

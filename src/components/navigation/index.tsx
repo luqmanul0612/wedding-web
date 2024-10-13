@@ -18,6 +18,7 @@ const Navigation: FC<Props> = (props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [ref, instanceRef] = useKeenSlider<HTMLDivElement>({
     slides: {
+      origin: "center",
       perView: 4,
     },
     initial: 0,
@@ -55,7 +56,6 @@ const Navigation: FC<Props> = (props) => {
                 key={item.id}
                 className="keen-slider__slide"
                 onClick={() => onClickMenu(item.id)}
-                style={{ minWidth: item.minWidth }}
               >
                 <div
                   className={clsx(classNames.item, {

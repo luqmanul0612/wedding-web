@@ -2,7 +2,7 @@
 import classNames from "./styles.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { Slider1, Slider2 } from "./components/sliders";
+import { Slider1, Slider2, Slider3 } from "./components/sliders";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Navigation from "./components/navigation";
@@ -41,7 +41,7 @@ export default function App() {
 
   useEffect(() => {
     const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
   }, []);
 
   return (
@@ -65,7 +65,9 @@ export default function App() {
         <div className="keen-slider__slide number-slide2">
           <Slider2 inView={currentSlide == 1} />
         </div>
-        <div className="keen-slider__slide number-slide3">3</div>
+        <div className="keen-slider__slide number-slide3">
+          <Slider3 inView={currentSlide == 2} />
+        </div>
         <div className="keen-slider__slide number-slide4">4</div>
         <div className="keen-slider__slide number-slide5">5</div>
         <div className="keen-slider__slide number-slide6">6</div>
