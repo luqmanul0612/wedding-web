@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useRef } from "react";
 import bgvideo from "../../assets/bg-video-1.mp4";
 import classNames from "./slider1.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
@@ -10,9 +10,18 @@ interface Props {
 }
 
 const Slider1: FC<Props> = (props) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (props.inView && videoRef.current) {
+      videoRef.current.play();
+      videoRef.current.currentTime = 0;
+    }
+  }, [props.inView]);
+
   return (
     <div className={classNames.main}>
-      <video className={classNames.bgVideo} autoPlay muted loop>
+      <video ref={videoRef} className={classNames.bgVideo} muted loop>
         <source src={bgvideo} type="video/mp4" />
       </video>
       {props.inView && (
