@@ -39,6 +39,11 @@ export default function App() {
     }
   }, [isOpened]);
 
+  useEffect(() => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }, []);
+
   return (
     <motion.div
       className={classNames.main}
