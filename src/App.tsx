@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function App() {
   const [isOpened, setIsOpened] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
