@@ -2,13 +2,13 @@
 import "./styles.scss";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { Slider1 } from "./components/sliders";
+import { Slider1, Slider2 } from "./components/sliders";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function App() {
   const [isOpened, setIsOpened] = useState(false);
-  const [, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
@@ -41,9 +41,15 @@ export default function App() {
     >
       <div ref={sliderRef} className="keen-slider">
         <div className="keen-slider__slide">
-          <Slider1 isOpened={isOpened} onClickOpen={onClickOpen} />
+          <Slider1
+            isOpened={isOpened}
+            onClickOpen={onClickOpen}
+            inView={currentSlide == 0}
+          />
         </div>
-        <div className="keen-slider__slide number-slide2">2</div>
+        <div className="keen-slider__slide number-slide2">
+          <Slider2 inView={currentSlide == 1} />
+        </div>
         <div className="keen-slider__slide number-slide3">3</div>
         <div className="keen-slider__slide number-slide4">4</div>
         <div className="keen-slider__slide number-slide5">5</div>
