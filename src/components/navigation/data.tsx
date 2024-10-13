@@ -41,6 +41,7 @@ export const menu = [
     id: 7,
     label: "Live Streaming",
     icon: <Opening />,
+    minWidth: 150,
   },
   {
     id: 8,

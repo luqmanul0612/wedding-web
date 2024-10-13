@@ -55,6 +55,7 @@ const Navigation: FC<Props> = (props) => {
                 key={item.id}
                 className="keen-slider__slide"
                 onClick={() => onClickMenu(item.id)}
+                style={{ minWidth: item.minWidth }}
               >
                 <div
                   className={clsx(classNames.item, {
