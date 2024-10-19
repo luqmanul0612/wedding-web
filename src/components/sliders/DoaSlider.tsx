@@ -1,6 +1,6 @@
 import { FC } from "react";
-import bgImg from "../../assets/images/img-5.jpeg";
-import classNames from "./RundownSlider.module.scss";
+import bgImg from "../../assets/images/img-6.jpeg";
+import classNames from "./DoaSlider.module.scss";
 import { config } from "../../config";
 import { motion } from "framer-motion";
 
@@ -8,7 +8,7 @@ interface Props {
   inView: boolean;
 }
 
-const RundownSlider: FC<Props> = (props) => {
+const DoaSlider: FC<Props> = (props) => {
   return (
     <div className={classNames.main}>
       <img className={classNames.bgImg} src={bgImg} />
@@ -20,7 +20,7 @@ const RundownSlider: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.title}
           >
-            Rundown Acara
+            Doa untuk Pengantin
           </motion.p>
           <motion.div
             initial={{ y: 100, opacity: 0 }}
@@ -28,7 +28,7 @@ const RundownSlider: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.content}
           >
-            {config.rundown}
+            {config.doa}
           </motion.div>
         </div>
       )}
@@ -36,4 +36,4 @@ const RundownSlider: FC<Props> = (props) => {
   );
 };
 
-export default RundownSlider;
+export default DoaSlider;

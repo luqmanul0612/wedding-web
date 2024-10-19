@@ -10,16 +10,18 @@ import Doa from "./assets/icons/doa.svg?react";
 import RundownAcara from "./assets/icons/rundownacara.svg?react";
 import Gift from "./assets/icons/gift.svg?react";
 import {
+  DoaSlider,
   OpeningSlider,
   RundownSlider,
-  Slider2,
-  Slider3,
-  Slider4,
-  Slider5,
-  Slider6,
-  Slider7,
-  Slider8,
+  GreetingSlider,
+  QuoteSlider,
+  BrideSlider,
+  AkadSlider,
+  ReceptionSlider,
+  MapSlider,
+  GalerySlider,
   ThankyouSlider,
+  GiftSlider,
 } from "./components/sliders";
 import manPhoto from "./assets/images/man.jpg";
 import womanPhoto from "./assets/images/woman.jpg";
@@ -88,6 +90,38 @@ export const config = {
     location: "Kediman mempelai wanita Jl. Hasanuddin 1 No 1 Bekasi",
   },
   galeries: [galery1, galery2, galery3, galery4, galery5, galery6],
+  rundown: (
+    <>
+      09:00 - Persiapan <br />
+      Pengantin bersiap memasuki Ballroom <br />
+      <br />
+      09:30 - Memasuki Ruang Acara <br />
+      Pengantin memasuki Ballroom menuju pelaminan. <br />
+      <br />
+      09:45 - Makan & Foto Bersama. <br />
+      <br />
+      11:00 - Beauty shoot <br />
+      Sesi foto pengantin dibimbing oleh Fotografer <br />
+      <br />
+      12:00 - Istirahat Ganti Kostum <br />
+      <br />
+      13:00 - Memasuki Ruangan <br />
+      Pengantin memasuki ruangan dengan kostum baru <br />
+      <br />
+      13:30 - Makan & Foto Bersama <br />
+      Para tamu undangan dipersilahkan makan dan dapat berfoto bersama di
+      pelaminan <br />
+      <br />
+      16:00 - Acara Selesai
+    </>
+  ),
+  doa: (
+    <>
+      "Semoga Allah memberkahi di waktu bahagia dan memberkahimu di waktu susah,
+      dan mengumpulkan kalian berdua dalam kebaikan" <br />
+      <br />~ HR. Abu Daud ~
+    </>
+  ),
   thankYou: (
     <>
       Merupakan suatu kebahagiaan dan kehormatan bagi kami, bila
@@ -107,37 +141,37 @@ export const config = {
     {
       label: "Salam",
       icon: <Salam />,
-      component: Slider2,
+      component: GreetingSlider,
     },
     {
       label: "Quote",
       icon: <Quote />,
-      component: Slider3,
+      component: QuoteSlider,
     },
     {
       label: "Mempelai",
       icon: <Mempelai />,
-      component: Slider4,
+      component: BrideSlider,
     },
     {
       label: "Acara",
       icon: <Acara />,
-      component: Slider5,
+      component: AkadSlider,
     },
     {
       label: "Acara",
       icon: <Acara />,
-      component: Slider6,
+      component: ReceptionSlider,
     },
     {
       label: "Map",
       icon: <Map />,
-      component: Slider7,
+      component: MapSlider,
     },
     {
       label: "Galeri",
       icon: <Galery />,
-      component: Slider8,
+      component: GalerySlider,
     },
     {
       label: "Rundown Acara",
@@ -147,12 +181,12 @@ export const config = {
     {
       label: "Doa",
       icon: <Doa />,
-      component: RundownSlider,
+      component: DoaSlider,
     },
     {
       label: "Gift",
       icon: <Gift />,
-      component: RundownSlider,
+      component: GiftSlider,
     },
     {
       label: "Terimakasih",

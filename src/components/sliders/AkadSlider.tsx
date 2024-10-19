@@ -1,6 +1,6 @@
 import { FC, useMemo } from "react";
 import bgImg from "../../assets/images/img-2.jpeg";
-import classNames from "./slider5.module.scss";
+import classNames from "./AkadSlider.module.scss";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
@@ -16,7 +16,7 @@ interface Props {
   inView: boolean;
 }
 
-const Slider5: FC<Props> = (props) => {
+const AkadSlider: FC<Props> = (props) => {
   const event = useMemo(() => {
     return {
       title: config.event.weeding.title,
@@ -111,4 +111,4 @@ const Slider5: FC<Props> = (props) => {
   );
 };
 
-export default Slider5;
+export default AkadSlider;

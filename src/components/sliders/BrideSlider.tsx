@@ -1,6 +1,6 @@
 import { FC } from "react";
 import bgImg from "../../assets/images/img-1.jpeg";
-import classNames from "./slider4.module.scss";
+import classNames from "./BrideSlider.module.scss";
 import { motion } from "framer-motion";
 import PhotoFrame from "../photo-frame";
 import Instagram from "../../assets/icons/instagram.svg?react";
@@ -10,7 +10,7 @@ interface Props {
   inView: boolean;
 }
 
-const Slider4: FC<Props> = (props) => {
+const BrideSlider: FC<Props> = (props) => {
   return (
     <div className={classNames.main}>
       <img className={classNames.bgImg} src={bgImg} />
@@ -90,4 +90,4 @@ const Slider4: FC<Props> = (props) => {
   );
 };
 
-export default Slider4;
+export default BrideSlider;

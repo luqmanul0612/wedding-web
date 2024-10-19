@@ -1,6 +1,6 @@
 import { FC, useMemo } from "react";
 import bgImg from "../../assets/images/img-3.jpeg";
-import classNames from "./slider6.module.scss";
+import classNames from "./ReceptionSlider.module.scss";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
@@ -16,7 +16,7 @@ interface Props {
   inView: boolean;
 }
 
-const Slider6: FC<Props> = (props) => {
+const ReceptionSlider: FC<Props> = (props) => {
   const event = useMemo(() => {
     return {
       title: config.event.reception.title,
@@ -120,4 +120,4 @@ const Slider6: FC<Props> = (props) => {
   );
 };
 
-export default Slider6;
+export default ReceptionSlider;

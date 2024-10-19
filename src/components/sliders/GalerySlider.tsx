@@ -1,6 +1,6 @@
 import { FC, useMemo } from "react";
 import bgImg from "../../assets/images/img-4.jpeg";
-import classNames from "./slider8.module.scss";
+import classNames from "./GalerySlider.module.scss";
 import { config } from "../../config";
 import clsx from "clsx";
 

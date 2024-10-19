@@ -1,7 +1,7 @@
 import { FC } from "react";
 import bgImg from "../../assets/images/img-3.jpeg";
 import mapLocation from "../../assets/images/map-location.png";
-import classNames from "./slider7.module.scss";
+import classNames from "./MapSlider.module.scss";
 import { motion } from "framer-motion";
 import { config } from "../../config";
 
@@ -9,7 +9,7 @@ interface Props {
   inView: boolean;
 }
 
-const Slider7: FC<Props> = (props) => {
+const MapSlider: FC<Props> = (props) => {
   const onClickLocation = () => {
     window.open(config.map.link, "_blank");
   };
@@ -25,7 +25,7 @@ const Slider7: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.title}
           >
-            Acara Resepsi
+            Lokasi Acara
           </motion.p>
           <motion.p
             initial={{ scale: 0.8, opacity: 0 }}
@@ -58,4 +58,4 @@ const Slider7: FC<Props> = (props) => {
   );
 };
 
-export default Slider7;
+export default MapSlider;
