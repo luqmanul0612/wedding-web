@@ -30,11 +30,11 @@ export const menu = [
     label: "Acara",
     icon: <Acara />,
   },
-  // {
-  //   id: 5,
-  //   label: "Acara",
-  //   icon: <Opening />,
-  // },
+  {
+    id: 5,
+    label: "Acara",
+    icon: <Acara />,
+  },
   // {
   //   id: 6,
   //   label: "Map",

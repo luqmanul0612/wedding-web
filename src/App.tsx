@@ -8,6 +8,7 @@ import {
   Slider3,
   Slider4,
   Slider5,
+  Slider6,
 } from "./components/sliders";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -80,7 +81,9 @@ export default function App() {
         <div className="keen-slider__slide">
           <Slider5 inView={currentSlide == 4} />
         </div>
-        <div className="keen-slider__slide number-slide6">6</div>
+        <div className="keen-slider__slide">
+          <Slider6 inView={currentSlide == 5} />
+        </div>
       </div>
       {loaded && (
         <Navigation

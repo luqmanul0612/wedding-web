@@ -1,6 +1,6 @@
 import { FC, useMemo } from "react";
-import bgImg from "../../assets/images/img-2.jpeg";
-import classNames from "./slider5.module.scss";
+import bgImg from "../../assets/images/img-3.jpeg";
+import classNames from "./slider6.module.scss";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
@@ -15,13 +15,13 @@ interface Props {
   inView: boolean;
 }
 
-const Slider5: FC<Props> = (props) => {
+const Slider6: FC<Props> = (props) => {
   const event = useMemo(() => {
     return {
-      title: "Weeding Seila & Ridho",
-      startDate: dayjs.tz("2024-11-15 08:00", "Asia/Jakarta").utc(),
-      endDate: dayjs.tz("2024-11-15 17:00", "Asia/Jakarta").utc(),
-      detail: "Join us to celebrate the wedding of Seila and Ridho!",
+      title: "Resepsi Seila & Ridho",
+      startDate: dayjs.tz("2024-11-14 08:00", "Asia/Jakarta").utc(),
+      endDate: dayjs.tz("2024-11-14 12:00", "Asia/Jakarta").utc(),
+      detail: "Acara Resepsi Pernikahan Seila & Ridho",
       location: "Kediman mempelai wanita Jl. Hasanuddin 1 No 1 Bekasi",
     };
   }, []);
@@ -66,16 +66,16 @@ const Slider5: FC<Props> = (props) => {
       {props.inView && (
         <div className={classNames.content}>
           <motion.p
-            initial={{ x: 90, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.title}
           >
-            Akad Nikah
+            Acara Resepsi
           </motion.p>
           <motion.p
-            initial={{ x: 90, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.desc}
           >
@@ -86,9 +86,9 @@ const Slider5: FC<Props> = (props) => {
             <br /> {event.location}
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ bounce: 0, duration: 1.5, ease: "easeInOut" }}
           >
             <Countdown date={event.startDate.tz("Asia/Jakarta").toDate()} renderer={renderer} />
           </motion.div>
@@ -110,4 +110,4 @@ const Slider5: FC<Props> = (props) => {
   );
 };
 
-export default Slider5;
+export default Slider6;
