@@ -10,7 +10,6 @@ interface Props {
 
 const Slider7: FC<Props> = (props) => {
   const location = {
-    position: [-6.917464, 107.619123],
     mapLink: "https://maps.app.goo.gl/QWh59omV8rFZ1tkD6",
     desc: "Kediman mempelai wanita Jl. Hasanuddin 1 No 1 Bekasi",
   };
