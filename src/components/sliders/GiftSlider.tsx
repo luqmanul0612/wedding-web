@@ -1,13 +1,17 @@
 import { FC } from "react";
-import bgImg from "../../assets/images/img-5.jpeg";
+import bgImg from "../../assets/images/img-7.png";
 import classNames from "./GiftSlider.module.scss";
 import { motion } from "framer-motion";
+import { config } from "../../config";
 
 interface Props {
   inView: boolean;
 }
 
 const GiftSlider: FC<Props> = (props) => {
+  const onClickGift1 = () => {};
+  const onClickGift2 = () => {};
+
   return (
     <div className={classNames.main}>
       <img className={classNames.bgImg} src={bgImg} />
@@ -27,7 +31,20 @@ const GiftSlider: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.content}
           >
-            Test
+            {config.gift.content}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
+            className={classNames.buttons}
+          >
+            <button className={classNames.button} onClick={onClickGift1}>
+              Kirim Angpao
+            </button>
+            <button className={classNames.button} onClick={onClickGift2}>
+              Kirim Hadiah
+            </button>
           </motion.div>
         </div>
       )}

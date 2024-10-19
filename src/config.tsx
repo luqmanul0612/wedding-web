@@ -122,6 +122,15 @@ export const config = {
       <br />~ HR. Abu Daud ~
     </>
   ),
+  gift: {
+    content: (
+      <>
+        Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. <br />
+        <br />
+        Namun jika Anda ingin memberikan hadiah kami sediakan fitur berikut:
+      </>
+    ),
+  },
   thankYou: (
     <>
       Merupakan suatu kebahagiaan dan kehormatan bagi kami, bila
