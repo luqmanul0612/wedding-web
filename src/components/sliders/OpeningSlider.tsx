@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useState } from "react";
 import bgvideo from "../../assets/videos/bg-video-1.mp4";
-import classNames from "./slider1.module.scss";
+import classNames from "./OpeningSlider.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import { config } from "../../config";
 
@@ -14,7 +14,7 @@ interface QueryParams {
   [key: string]: string;
 }
 
-const Slider1: FC<Props> = (props) => {
+const OpeningSlider: FC<Props> = (props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [queryParams, setQueryParams] = useState<QueryParams>({});
 
@@ -90,4 +90,4 @@ const Slider1: FC<Props> = (props) => {
   );
 };
 
-export default Slider1;
+export default OpeningSlider;

@@ -5,8 +5,13 @@ import Mempelai from "./assets/icons/mempelai.svg?react";
 import Acara from "./assets/icons/acara.svg?react";
 import Map from "./assets/icons/map.svg?react";
 import Galery from "./assets/icons/galery.svg?react";
+import Terimakasih from "./assets/icons/terimakasih.svg?react";
+import Doa from "./assets/icons/doa.svg?react";
+import RundownAcara from "./assets/icons/rundownacara.svg?react";
+import Gift from "./assets/icons/gift.svg?react";
 import {
-  Slider1,
+  OpeningSlider,
+  RundownSlider,
   Slider2,
   Slider3,
   Slider4,
@@ -14,6 +19,7 @@ import {
   Slider6,
   Slider7,
   Slider8,
+  ThankyouSlider,
 } from "./components/sliders";
 import manPhoto from "./assets/images/man.jpg";
 import womanPhoto from "./assets/images/woman.jpg";
@@ -82,11 +88,21 @@ export const config = {
     location: "Kediman mempelai wanita Jl. Hasanuddin 1 No 1 Bekasi",
   },
   galeries: [galery1, galery2, galery3, galery4, galery5, galery6],
+  thankYou: (
+    <>
+      Merupakan suatu kebahagiaan dan kehormatan bagi kami, bila
+      Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan doa restu kepada kedua
+      mempelai.
+      <br />
+      <br />
+      Hormat kami yang berbahagia
+    </>
+  ),
   sliderList: [
     {
       label: "Opening",
       icon: <Opening />,
-      component: Slider1,
+      component: OpeningSlider,
     },
     {
       label: "Salam",
@@ -123,50 +139,25 @@ export const config = {
       icon: <Galery />,
       component: Slider8,
     },
-    // {
-    //   id: 9,
-    //   label: "Video",
-    //   icon: <Opening />,
-    // },
-    // {
-    //   id: 10,
-    //   label: "Love Story",
-    //   icon: <Opening />,
-    // },
-    // {
-    //   id: 11,
-    //   label: "Extra Link",
-    //   icon: <Opening />,
-    // },
-    // {
-    //   id: 12,
-    //   label: "Rundown Acara",
-    //   icon: <Opening />,
-    // },
-    // {
-    //   id: 13,
-    //   label: "Doa",
-    //   icon: <Opening />,
-    // },
-    // {
-    //   id: 14,
-    //   label: "RSVP",
-    //   icon: <Opening />,
-    // },
-    // {
-    //   id: 15,
-    //   label: "Gift",
-    //   icon: <Opening />,
-    // },
-    // {
-    //   id: 16,
-    //   label: "Prokes",
-    //   icon: <Opening />,
-    // },
-    // {
-    //   id: 17,
-    //   label: "Terima Kasih",
-    //   icon: <Opening />,
-    // },
+    {
+      label: "Rundown Acara",
+      icon: <RundownAcara />,
+      component: RundownSlider,
+    },
+    {
+      label: "Doa",
+      icon: <Doa />,
+      component: RundownSlider,
+    },
+    {
+      label: "Gift",
+      icon: <Gift />,
+      component: RundownSlider,
+    },
+    {
+      label: "Terimakasih",
+      icon: <Terimakasih />,
+      component: ThankyouSlider,
+    },
   ],
 };
