@@ -3,6 +3,7 @@ import Salam from "../../assets/icons/salam.svg?react";
 import Quote from "../../assets/icons/quote.svg?react";
 import Mempelai from "../../assets/icons/mempelai.svg?react";
 import Acara from "../../assets/icons/acara.svg?react";
+import Map from "../../assets/icons/map.svg?react";
 
 export const menu = [
   {
@@ -35,11 +36,11 @@ export const menu = [
     label: "Acara",
     icon: <Acara />,
   },
-  // {
-  //   id: 6,
-  //   label: "Map",
-  //   icon: <Opening />,
-  // },
+  {
+    id: 6,
+    label: "Map",
+    icon: <Map />,
+  },
   // {
   //   id: 7,
   //   label: "Live Streaming",

@@ -9,6 +9,7 @@ import {
   Slider4,
   Slider5,
   Slider6,
+  Slider7,
 } from "./components/sliders";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -83,6 +84,9 @@ export default function App() {
         </div>
         <div className="keen-slider__slide">
           <Slider6 inView={currentSlide == 5} />
+        </div>
+        <div className="keen-slider__slide">
+          <Slider7 inView={currentSlide == 6} />
         </div>
       </div>
       {loaded && (
