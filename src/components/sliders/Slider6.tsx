@@ -7,6 +7,7 @@ import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import "dayjs/locale/id";
 import Countdown, { CountdownRendererFn } from "react-countdown";
+import { config } from "../../config";
 dayjs.locale("id");
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -18,11 +19,13 @@ interface Props {
 const Slider6: FC<Props> = (props) => {
   const event = useMemo(() => {
     return {
-      title: "Resepsi Seila & Ridho",
-      startDate: dayjs.tz("2024-11-14 08:00", "Asia/Jakarta").utc(),
-      endDate: dayjs.tz("2024-11-14 12:00", "Asia/Jakarta").utc(),
-      detail: "Acara Resepsi Pernikahan Seila & Ridho",
-      location: "Kediman mempelai wanita Jl. Hasanuddin 1 No 1 Bekasi",
+      title: config.event.reception.title,
+      startDate: dayjs
+        .tz(config.event.reception.startDate, "Asia/Jakarta")
+        .utc(),
+      endDate: dayjs.tz(config.event.reception.endDate, "Asia/Jakarta").utc(),
+      detail: config.event.reception.detail,
+      location: config.event.reception.location,
     };
   }, []);
 
@@ -79,9 +82,13 @@ const Slider6: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.desc}
           >
-            {dayjs(event.startDate).tz("Asia/Jakarta").format("dddd, DD MMMM YYYY")}
+            {dayjs(event.startDate)
+              .tz("Asia/Jakarta")
+              .format("dddd, DD MMMM YYYY")}
             <br />{" "}
-            {`Pukul ${dayjs(event.startDate).tz("Asia/Jakarta").format("HH:mm")} WIB s.d. Selesai`}
+            {`Pukul ${dayjs(event.startDate)
+              .tz("Asia/Jakarta")
+              .format("HH:mm")} WIB s.d. Selesai`}
             <br />
             <br /> {event.location}
           </motion.p>
@@ -90,7 +97,10 @@ const Slider6: FC<Props> = (props) => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ bounce: 0, duration: 1.5, ease: "easeInOut" }}
           >
-            <Countdown date={event.startDate.tz("Asia/Jakarta").toDate()} renderer={renderer} />
+            <Countdown
+              date={event.startDate.tz("Asia/Jakarta").toDate()}
+              renderer={renderer}
+            />
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}

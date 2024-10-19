@@ -1,9 +1,8 @@
-import Slider1 from "./Slider1";
-import Slider2 from "./Slider2";
-import Slider3 from "./Slider3";
-import Slider4 from "./Slider4";
-import Slider5 from "./Slider5";
-import Slider6 from "./Slider6";
-import Slider7 from "./Slider7";
-
-export { Slider1, Slider2, Slider3, Slider4, Slider5, Slider6, Slider7 };
+export {default as Slider1} from "./Slider1";
+export {default as Slider2} from "./Slider2";
+export {default as Slider3} from "./Slider3";
+export {default as Slider4} from "./Slider4";
+export {default as Slider5} from "./Slider5";
+export {default as Slider6} from "./Slider6";
+export {default as Slider7} from "./Slider7";
+export {default as Slider8} from "./Slider8";

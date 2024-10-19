@@ -2,6 +2,7 @@ import { FC, useEffect, useRef } from "react";
 import bgvideo from "../../assets/videos/bg-video-3.mp4";
 import classNames from "./slider3.module.scss";
 import { motion } from "framer-motion";
+import { config } from "../../config";
 
 interface Props {
   inView: boolean;
@@ -30,7 +31,7 @@ const Slider3: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.title}
           >
-            Q.S. Ar Rum: 21
+            {config.quote.title}
           </motion.p>
           <motion.p
             initial={{ y: 100, opacity: 0 }}
@@ -38,11 +39,7 @@ const Slider3: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.text}
           >
-            Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-            pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
-            dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
-            kasih dan sayang. Sungguh, pada yang demikian itu benar-benar
-            terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
+            {config.quote.content}
           </motion.p>
         </div>
       )}

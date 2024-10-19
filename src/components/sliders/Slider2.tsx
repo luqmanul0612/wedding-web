@@ -2,6 +2,7 @@ import { FC, useEffect, useRef } from "react";
 import bgvideo from "../../assets/videos/bg-video-2.mp4";
 import classNames from "./slider2.module.scss";
 import { motion } from "framer-motion";
+import { config } from "../../config";
 
 interface Props {
   inView: boolean;
@@ -32,7 +33,7 @@ const Slider2: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.title}
           >
-            Assalamu'alaikum Wr.Wb.
+            {config.greeting.title}
           </motion.p>
           <motion.p
             initial={{ y: 150, opacity: 0 }}
@@ -40,8 +41,7 @@ const Slider2: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.text}
           >
-            Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/ Ibu/
-            Saudara/ I pada acara resepsi pernikahan kami.
+            {config.greeting.content}
           </motion.p>
         </div>
       )}

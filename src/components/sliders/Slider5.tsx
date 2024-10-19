@@ -7,6 +7,7 @@ import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import "dayjs/locale/id";
 import Countdown, { CountdownRendererFn } from "react-countdown";
+import { config } from "../../config";
 dayjs.locale("id");
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -18,11 +19,11 @@ interface Props {
 const Slider5: FC<Props> = (props) => {
   const event = useMemo(() => {
     return {
-      title: "Weeding Seila & Ridho",
-      startDate: dayjs.tz("2024-11-15 08:00", "Asia/Jakarta").utc(),
-      endDate: dayjs.tz("2024-11-15 17:00", "Asia/Jakarta").utc(),
-      detail: "Join us to celebrate the wedding of Seila and Ridho!",
-      location: "Kediman mempelai wanita Jl. Hasanuddin 1 No 1 Bekasi",
+      title: config.event.weeding.title,
+      startDate: dayjs.tz(config.event.weeding.startDate, "Asia/Jakarta").utc(),
+      endDate: dayjs.tz(config.event.weeding.endDate, "Asia/Jakarta").utc(),
+      detail: config.event.weeding.detail,
+      location: config.event.weeding.location,
     };
   }, []);
 

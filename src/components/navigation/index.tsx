@@ -5,8 +5,8 @@ import classNames from "./navigation.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { motion } from "framer-motion";
-import { menu } from "./data";
 import clsx from "clsx";
+import { config } from "../../config";
 
 interface Props {
   isOpened: boolean;
@@ -28,10 +28,10 @@ const Navigation: FC<Props> = (props) => {
     },
   });
 
-  const onClickMenu = (id: number) => {
-    props.navigationRef.moveToIdx(id);
-    setCurrentSlide(id);
-    instanceRef.current?.moveToIdx(id, true);
+  const onClickMenu = (idx: number) => {
+    props.navigationRef.moveToIdx(idx);
+    setCurrentSlide(idx);
+    instanceRef.current?.moveToIdx(idx, true);
   };
 
   useEffect(() => {
@@ -51,15 +51,15 @@ const Navigation: FC<Props> = (props) => {
           transition={{ duration: 1, bounce: 0 }}
         >
           <div ref={ref} className="keen-slider">
-            {menu.map((item) => (
+            {config.sliderList.map((item, idx) => (
               <div
-                key={item.id}
+                key={idx}
                 className="keen-slider__slide"
-                onClick={() => onClickMenu(item.id)}
+                onClick={() => onClickMenu(idx)}
               >
                 <div
                   className={clsx(classNames.item, {
-                    [classNames.active]: item.id === currentSlide,
+                    [classNames.active]: idx === currentSlide,
                   })}
                 >
                   <div className={classNames.icon}>{item.icon}</div>

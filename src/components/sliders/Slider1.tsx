@@ -2,6 +2,7 @@ import { FC, useEffect, useRef, useState } from "react";
 import bgvideo from "../../assets/videos/bg-video-1.mp4";
 import classNames from "./slider1.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
+import { config } from "../../config";
 
 interface Props {
   isOpened: boolean;
@@ -56,7 +57,7 @@ const Slider1: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.names}
           >
-            Seila Ridho
+            {`${config.bride.woman.name} ${config.bride.man.name}`}
           </motion.p>
           <motion.div
             className={classNames.invitation}

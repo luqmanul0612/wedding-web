@@ -2,19 +2,11 @@
 import classNames from "./styles.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import {
-  Slider1,
-  Slider2,
-  Slider3,
-  Slider4,
-  Slider5,
-  Slider6,
-  Slider7,
-} from "./components/sliders";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Navigation from "./components/navigation";
 import clsx from "clsx";
+import { config } from "./config";
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
@@ -63,31 +55,15 @@ export default function App() {
         ref={sliderRef}
         className={clsx("keen-slider", classNames["keen-slider-main"])}
       >
-        <div className="keen-slider__slide">
-          <Slider1
-            isOpened={isOpened}
-            onClickOpen={onClickOpen}
-            inView={currentSlide == 0}
-          />
-        </div>
-        <div className="keen-slider__slide number-slide2">
-          <Slider2 inView={currentSlide == 1} />
-        </div>
-        <div className="keen-slider__slide">
-          <Slider3 inView={currentSlide == 2} />
-        </div>
-        <div className="keen-slider__slide">
-          <Slider4 inView={currentSlide == 3} />
-        </div>
-        <div className="keen-slider__slide">
-          <Slider5 inView={currentSlide == 4} />
-        </div>
-        <div className="keen-slider__slide">
-          <Slider6 inView={currentSlide == 5} />
-        </div>
-        <div className="keen-slider__slide">
-          <Slider7 inView={currentSlide == 6} />
-        </div>
+        {config.sliderList.map(({ component: Slider }, idx) => (
+          <div key={idx} className="keen-slider__slide">
+            <Slider
+              isOpened={isOpened}
+              onClickOpen={onClickOpen}
+              inView={currentSlide === idx}
+            />
+          </div>
+        ))}
       </div>
       {loaded && (
         <Navigation

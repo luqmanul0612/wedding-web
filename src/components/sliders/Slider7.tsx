@@ -3,18 +3,15 @@ import bgImg from "../../assets/images/img-3.jpeg";
 import mapLocation from "../../assets/images/map-location.png";
 import classNames from "./slider7.module.scss";
 import { motion } from "framer-motion";
+import { config } from "../../config";
 
 interface Props {
   inView: boolean;
 }
 
 const Slider7: FC<Props> = (props) => {
-  const location = {
-    mapLink: "https://maps.app.goo.gl/QWh59omV8rFZ1tkD6",
-    desc: "Kediman mempelai wanita Jl. Hasanuddin 1 No 1 Bekasi",
-  };
   const onClickLocation = () => {
-    window.open(location.mapLink, "_blank");
+    window.open(config.map.link, "_blank");
   };
 
   return (
@@ -36,7 +33,7 @@ const Slider7: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.desc}
           >
-            {location.desc}
+            {config.map.location}
           </motion.p>
           <motion.div
             initial={{ y: 40, opacity: 0 }}
