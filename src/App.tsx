@@ -2,7 +2,13 @@
 import classNames from "./styles.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { Slider1, Slider2, Slider3, Slider4 } from "./components/sliders";
+import {
+  Slider1,
+  Slider2,
+  Slider3,
+  Slider4,
+  Slider5,
+} from "./components/sliders";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Navigation from "./components/navigation";
@@ -71,7 +77,9 @@ export default function App() {
         <div className="keen-slider__slide">
           <Slider4 inView={currentSlide == 3} />
         </div>
-        <div className="keen-slider__slide number-slide5">5</div>
+        <div className="keen-slider__slide">
+          <Slider5 inView={currentSlide == 4} />
+        </div>
         <div className="keen-slider__slide number-slide6">6</div>
       </div>
       {loaded && (

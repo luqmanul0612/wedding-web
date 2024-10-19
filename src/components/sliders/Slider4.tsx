@@ -11,7 +11,7 @@ interface Props {
   inView: boolean;
 }
 
-const Slider3: FC<Props> = (props) => {
+const Slider4: FC<Props> = (props) => {
   return (
     <div className={classNames.main}>
       <img className={classNames.bgImg} src={bgImg} />
@@ -91,4 +91,4 @@ const Slider3: FC<Props> = (props) => {
   );
 };
 
-export default Slider3;
+export default Slider4;
