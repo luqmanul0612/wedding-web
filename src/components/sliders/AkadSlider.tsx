@@ -19,11 +19,11 @@ interface Props {
 const AkadSlider: FC<Props> = (props) => {
   const event = useMemo(() => {
     return {
-      title: config.event.weeding.title,
-      startDate: dayjs.tz(config.event.weeding.startDate, "Asia/Jakarta").utc(),
-      endDate: dayjs.tz(config.event.weeding.endDate, "Asia/Jakarta").utc(),
-      detail: config.event.weeding.detail,
-      location: config.event.weeding.location,
+      title: config.event.akad.title,
+      startDate: dayjs.tz(config.event.akad.startDate, "Asia/Jakarta").utc(),
+      endDate: dayjs.tz(config.event.akad.endDate, "Asia/Jakarta").utc(),
+      detail: config.event.akad.detail,
+      location: config.event.akad.location,
     };
   }, []);
 

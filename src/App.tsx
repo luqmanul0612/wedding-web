@@ -1,14 +1,15 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import classNames from "./styles.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Navigation from "./components/navigation";
 import clsx from "clsx";
 import { config } from "./config";
+import BackgroundMusic from "./components/BackgroundMusic";
 
 export default function App() {
+  const [playAudio, setPlayAudio] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -31,18 +32,11 @@ export default function App() {
 
   const onClickOpen = () => {
     setIsOpened(true);
-  };
-
-  useEffect(() => {
-    if (isOpened) {
+    setPlayAudio(true);
+    setTimeout(() => {
       instanceRef.current?.moveToIdx(1, true);
-    }
-  }, [isOpened]);
-
-  useEffect(() => {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }, []);
+    }, 300);
+  };
 
   return (
     <motion.div
@@ -54,7 +48,13 @@ export default function App() {
       <div
         ref={sliderRef}
         className={clsx("keen-slider", classNames["keen-slider-main"])}
+        style={{ position: "relative" }}
       >
+        <BackgroundMusic
+          isOpened={isOpened}
+          playAudio={playAudio}
+          setPlayAudio={setPlayAudio}
+        />
         {config.sliderList.map(({ component: Slider }, idx) => (
           <div key={idx} className="keen-slider__slide">
             <Slider

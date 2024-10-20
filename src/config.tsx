@@ -70,7 +70,7 @@ export const config = {
       "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.",
   },
   event: {
-    weeding: {
+    akad: {
       title: "Weedind Seila & Ridho",
       detail: "Join us to celebrate the wedding of Seila and Ridho!",
       startDate: "2024-11-14 08:00",
