@@ -1,16 +1,18 @@
 import classNames from "./styles.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Navigation from "./components/navigation";
 import clsx from "clsx";
 import { config } from "./config";
 import BackgroundMusic from "./components/background-music";
+import preLoadAssets from "./utils/preload-assets";
 
 export default function App() {
   const [playAudio, setPlayAudio] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const [loadedSlider, setLoadedSlider] = useState(false);
+  const [isLoadingAssets, setIsLoadingAssets] = useState(true);
   const [isOpened, setIsOpened] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -24,7 +26,7 @@ export default function App() {
         setCurrentSlide(slider.track.details.rel);
       },
       created() {
-        setLoaded(true);
+        setLoadedSlider(true);
       },
     },
     []
@@ -38,6 +40,19 @@ export default function App() {
     }, 300);
   };
 
+  useEffect(() => {
+    setIsLoadingAssets(true);
+    preLoadAssets()
+      .then(() => {
+        setTimeout(() => {
+          setIsLoadingAssets(false);
+        }, 1000);
+      })
+      .catch((err) => {
+        console.log("error", err);
+      });
+  }, []);
+
   return (
     <motion.div
       className={classNames.main}
@@ -45,27 +60,46 @@ export default function App() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <div
-        ref={sliderRef}
-        className={clsx("keen-slider", classNames["keen-slider-main"])}
-        style={{ position: "relative" }}
-      >
-        <BackgroundMusic
-          isOpened={isOpened}
-          playAudio={playAudio}
-          setPlayAudio={setPlayAudio}
-        />
-        {config.sliderList.map(({ component: Slider }, idx) => (
-          <div key={idx} className="keen-slider__slide">
-            <Slider
-              isOpened={isOpened}
-              onClickOpen={onClickOpen}
-              inView={currentSlide === idx}
-            />
-          </div>
-        ))}
-      </div>
-      {loaded && (
+      <AnimatePresence mode="wait">
+        {isLoadingAssets && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ bounce: 0, duration: 0.5, ease: "easeInOut" }}
+            className={classNames["loader-container"]}
+          >
+            <div className={classNames.loader}>Loading..</div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {!isLoadingAssets && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ bounce: 0, duration: 1, ease: "easeInOut" }}
+          ref={sliderRef}
+          className={clsx("keen-slider", classNames["keen-slider-main"])}
+          style={{ position: "relative" }}
+        >
+          <BackgroundMusic
+            isOpened={isOpened}
+            playAudio={playAudio}
+            setPlayAudio={setPlayAudio}
+          />
+          {config.sliderList.map(({ component: Slider }, idx) => (
+            <div key={idx} className="keen-slider__slide">
+              <Slider
+                isOpened={isOpened}
+                onClickOpen={onClickOpen}
+                inView={currentSlide === idx}
+              />
+            </div>
+          ))}
+        </motion.div>
+      )}
+      {loadedSlider && (
         <Navigation
           currentSlide={currentSlide}
           isOpened={isOpened}
