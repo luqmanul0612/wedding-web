@@ -15,6 +15,7 @@ interface QueryParams {
 }
 
 const OpeningSlider: FC<Props> = (props) => {
+  const [loadedVideo, setLoadedVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [queryParams, setQueryParams] = useState<QueryParams>({});
 
@@ -38,10 +39,16 @@ const OpeningSlider: FC<Props> = (props) => {
 
   return (
     <div className={classNames.main}>
-      <video ref={videoRef} className={classNames.bgVideo} muted loop>
+      <video
+        ref={videoRef}
+        className={classNames.bgVideo}
+        muted
+        loop
+        onLoadedData={() => setLoadedVideo(true)}
+      >
         <source src={bgvideo} type="video/mp4" />
       </video>
-      {props.inView && (
+      {props.inView && loadedVideo && (
         <div className={classNames.content}>
           <motion.p
             initial={{ y: -150, opacity: 0 }}
