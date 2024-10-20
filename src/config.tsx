@@ -9,6 +9,7 @@ import Terimakasih from "./assets/icons/terimakasih.svg?react";
 import Doa from "./assets/icons/doa.svg?react";
 import RundownAcara from "./assets/icons/rundownacara.svg?react";
 import Gift from "./assets/icons/gift.svg?react";
+import backgroundMusic from "./assets/audios/bg-music.mp3";
 import {
   DoaSlider,
   OpeningSlider,
@@ -33,6 +34,7 @@ import galery5 from "./assets/images/galery-5.jpg";
 import galery6 from "./assets/images/galery-6.jpg";
 
 export const config = {
+  backgroundMusic: backgroundMusic,
   bride: {
     man: {
       fullName: "Ridho Imantiyar",

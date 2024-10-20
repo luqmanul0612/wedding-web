@@ -1,10 +1,10 @@
 import { forwardRef, useEffect, useRef } from "react";
-import bgMusic from "../../assets/audios/bg-music.mp3";
 import { useMergeRefs } from "../../utils/useMergeRef";
-import classNames from "./BackgroudMusic.module.scss";
+import classNames from "./background-music.module.scss";
 import Play from "../../assets/icons/play.svg?react";
 import Pause from "../../assets/icons/pause.svg?react";
 import { motion } from "framer-motion";
+import { config } from "../../config";
 
 type Props = {
   isOpened: boolean;
@@ -36,7 +36,7 @@ const BackgroundMusic = forwardRef<HTMLAudioElement, Props>((props, ref) => {
   return (
     <>
       <audio ref={audioRef} loop>
-        <source src={bgMusic} type="audio/mpeg" />
+        <source src={config.backgroundMusic} type="audio/mpeg" />
       </audio>
       {props.isOpened && (
         <motion.div

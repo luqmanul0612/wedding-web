@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Navigation from "./components/navigation";
 import clsx from "clsx";
 import { config } from "./config";
-import BackgroundMusic from "./components/BackgroundMusic";
+import BackgroundMusic from "./components/background-music";
 
 export default function App() {
   const [playAudio, setPlayAudio] = useState(false);
