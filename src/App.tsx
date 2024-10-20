@@ -73,22 +73,22 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
-      {!isLoadingAssets && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ bounce: 0, duration: 1, ease: "easeInOut" }}
-          ref={sliderRef}
-          className={clsx("keen-slider", classNames["keen-slider-main"])}
-          style={{ position: "relative" }}
-        >
-          <BackgroundMusic
-            isOpened={isOpened}
-            playAudio={playAudio}
-            setPlayAudio={setPlayAudio}
-          />
-          {config.sliderList.map(({ component: Slider }, idx) => (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ bounce: 0, duration: 1, ease: "easeInOut" }}
+        ref={sliderRef}
+        className={clsx("keen-slider", classNames["keen-slider-main"])}
+        style={{ position: "relative" }}
+      >
+        <BackgroundMusic
+          isOpened={isOpened}
+          playAudio={playAudio}
+          setPlayAudio={setPlayAudio}
+        />
+        {(isOpened ? config.sliderList : config.sliderList.slice(0)).map(
+          ({ component: Slider }, idx) => (
             <div key={idx} className="keen-slider__slide">
               <Slider
                 isOpened={isOpened}
@@ -96,9 +96,9 @@ export default function App() {
                 inView={currentSlide === idx}
               />
             </div>
-          ))}
-        </motion.div>
-      )}
+          )
+        )}
+      </motion.div>
       {loadedSlider && (
         <Navigation
           currentSlide={currentSlide}
