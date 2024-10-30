@@ -3,15 +3,14 @@ import bgImg from "../../assets/images/img-7.png";
 import classNames from "./GiftSlider.module.scss";
 import { motion } from "framer-motion";
 import { config } from "../../config";
+import ModalAngpao from "../modal-angpao";
+import ModalGift from "../modal-gift";
 
 interface Props {
   inView: boolean;
 }
 
 const GiftSlider: FC<Props> = (props) => {
-  const onClickGift1 = () => {};
-  const onClickGift2 = () => {};
-
   return (
     <div className={classNames.main}>
       <img className={classNames.bgImg} src={bgImg} />
@@ -39,12 +38,8 @@ const GiftSlider: FC<Props> = (props) => {
             transition={{ bounce: 0, duration: 2, ease: "easeInOut" }}
             className={classNames.buttons}
           >
-            <button className={classNames.button} onClick={onClickGift1}>
-              Kirim Angpao
-            </button>
-            <button className={classNames.button} onClick={onClickGift2}>
-              Kirim Hadiah
-            </button>
+            <ModalAngpao />
+            <ModalGift />
           </motion.div>
         </div>
       )}
